@@ -1,48 +1,66 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import bgImg from "../../assets/white.png";
 import React from "react";
+import Card from "../components/Card";
 
 const WelcomeScreen = ({ navigation }) => {
-	return (
-		<View style={{ flex: 1, alignItems: "center" }}>
-			<Image
-				source={require("../../assets/images/welcome1.png")}
-				style={{ marginTop: 30 }}
-			/>
-
-			<Text style={{ color: "#f96163", fontSize: 22, fontWeight: "bold" }}>
-				40K+ Premium Recipes
-			</Text>
-
-			<Text
-				style={{
-					fontSize: 42,
-					fontWeight: "bold",
-					color: "#3c444c",
-					marginTop: 44,
-					marginBottom: 40,
-				}}
-			>
-				Cook Like A Chef
-			</Text>
-
-			<TouchableOpacity
-				onPress={() => navigation.navigate("RecipeList")}
-				style={{
-					backgroundColor: "#f96163",
-					borderRadius: 18,
-					paddingVertical: 18,
-					width: "80%",
-					alignItems: "center",
-				}}
-			>
-				<Text style={{ fontSize: 18, color: "#fff", fontWeight: "700" }}>
-					Let's Go
-				</Text>
-			</TouchableOpacity>
-		</View>
-	);
+  return (
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.title1}>Where</Text>
+        <Text style={styles.title2}>Music</Text>
+        <Text style={styles.title3}>finds its home</Text>
+        <Text style={styles.title4}>Explore, Listen and discover</Text>
+        <Image
+          style={{
+            margin: 20,
+            position: "absolute",
+            width: 350,
+            height: 400,
+            zIndex: -10,
+          }}
+          source={bgImg}
+        />
+        <Card />
+      </View>
+    </ScrollView>
+  );
 };
 
-export default WelcomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    padding: 20,
+    marginBottom: 120,
+  },
+  title1: {
+    fontSize: 70,
+    color: "#0057ff",
+    fontWeight: "700",
+  },
+  title2: {
+    fontSize: 100,
+    color: "#0057ff",
+    fontWeight: "700",
+  },
+  title3: {
+    fontSize: 40,
+    color: "#36454F",
+    fontWeight: "700",
+  },
+  title4: {
+    fontSize: 20,
+    color: "#000",
+    fontWeight: "700",
+  },
+});
 
-const styles = StyleSheet.create({});
+export default WelcomeScreen;
