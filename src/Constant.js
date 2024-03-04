@@ -11,6 +11,7 @@ import p3 from "../assets/p3.png";
 import l3 from "../assets/l3.png";
 import p4 from "../assets/p4.png";
 import p5 from "../assets/p5.png";
+
 export const iconsList = [
   {
     id: 1,
